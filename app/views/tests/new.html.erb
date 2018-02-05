@@ -1,0 +1,12 @@
+<%= form_for @test, action: "create" do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= submit_tag("submit") %>
+<% end %>
+
+<form accept-charset="UTF-8" action="/tests" method="post">
+  <label for="test_name">Name</label>
+  <!--  need auth token-->
+  <input id="test_name" name="test[name]" type="text"/>
+  <input type="submit" name="comit" value="submit" />
+</form>

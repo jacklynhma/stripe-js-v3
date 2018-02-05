@@ -1,0 +1,7 @@
+<% if !@tests.blank? %>
+  <% @tests.each do |test| %>
+    <%= test.name %>
+  <% end  %>
+<% end %>
+
+<%= link_to "new", new_test_path %>

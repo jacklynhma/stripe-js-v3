@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. routes.rb
+resources :classes, only: [:index]
 
-Things you may want to cover:
+2. rails g migration CreateClassesTable
 
-* Ruby version
+```
+class CreateClasses < ActiveRecord::Migration[5.1]
+  def change
+    create_table :classes do |t|
+      t.string :name, null: false
+      t.timestamps
+    end
+  end
+end
+```
+3. bundle exec rake db:migrate
 
-* System dependencies
+4. app/controllers/classes_controller.rb
 
-* Configuration
+5. app/models/class.rb
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. app/views/classes/index.html.erb

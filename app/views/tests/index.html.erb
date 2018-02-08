@@ -6,7 +6,7 @@
 
 <%= link_to "new", new_test_path %>
 
-<form action="/tests" method="post" id="payment-form">
+<form action="/tests" method="post" id="test-payment-form">
   <div class="form-row">
     <label for="card-element">
       Credit or debit card
@@ -21,4 +21,19 @@
 
   </div>
   <button>Submit Payment</button>
+</form>
+
+<br>
+<br>
+
+<form action="your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_92AqqtXbmFD1dVR49i19XBOZ"
+    data-amount="999"
+    data-name="Workbar LLC"
+    data-description="Example charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script>
 </form>

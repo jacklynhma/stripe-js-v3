@@ -1,0 +1,9 @@
+<% Stripe.api_key = "sk_test_67VIDDWRpzE3Si7LeH3u4nD5" %>
+<% @users.each do |user| %>
+  <%= user.name %>
+  <%  Stripe::Customer.retrieve(user.token).charges.each do |charge|%>
+    <%= charge.description %>
+    <% byebug %>
+    <%= button_to "refund", refund_user_path(id: user.id, charge_id: charge.id) %>
+  <% end %>
+<% end %>
